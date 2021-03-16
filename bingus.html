@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    
+<!-- CSS -->
+	<style>
+@font-face {
+  font-family: firaCodeLight;
+  src: url(fonts/FiraCode-Light.ttf);
+}
+html{
+    background-color: #000000;
+    font-family: firaCodeRegular;
+    color: white;
+    margin: 0; height: 100%; overflow: hidden
+}
+.bigflex{
+    font-family: firaCodeLight;
+    margin: auto;
+    text-align: center;
+    font-size: 90px;
+}
+
+.smallflex{
+    font-family: firaCodeLight;
+    margin: auto;
+    text-align: center;
+    font-size: 30px;
+}
+    </style>
+
+
+
+<!-- Design -->
+</head>
+    <div class="bigflex">
+		<p id="karma1"></p> GallowBoob
+    <div class="bigflex">
+		<p id="karma2"></p> CheetahSperm18
+    <div class="bigflex">
+      <p id="karmagap"></p> Karma Gap
+	</div>
+	
+    </div>
+
+	
+	
+</body>
+
+<!-- Script
+// This works by magic, don't touch please -->
+
+<script type="text/javascript">
+  function x(){
+    var me = new XMLHttpRequest();
+    me.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var redditAboutJSON = JSON.parse(this.responseText);
+      document.getElementById("karma1").innerHTML = redditAboutJSON.data.total_karma;
+    }
+  };
+  me.open("GET", "https://www.reddit.com/user/gallowboob/about.json", true);
+  me.send();
+  sleep(500);
+  x();
+}
+  
+  function y(){
+    var me = new XMLHttpRequest();
+    me.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var redditAboutJSON = JSON.parse(this.responseText);
+      document.getElementById("karma2").innerHTML = redditAboutJSON.data.total_karma;
+    }
+  };
+  me.open("GET", "https://www.reddit.com/user/gallowboob/about.json", true);
+  me.send();
+  sleep(500);
+  y();
+
+    
+    var karmagap == karma1 - karma2
+    
+    
+x();
+y();
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+</script>
+
+</html>
