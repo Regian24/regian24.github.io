@@ -15,19 +15,19 @@
 }
 html{
     background-color: #000000;
-    font-family: firaCodeRegular;
+    font-family: Lato;
     color: white;
     margin: 0; height: 100%; overflow: hidden
 }
 .bigflex{
-    font-family: firaCodeLight;
+    font-family: Lato;
     margin: auto;
     text-align: center;
     font-size: 90px;
 }
 
 .smallflex{
-    font-family: firaCodeLight;
+    font-family: Lato;
     margin: auto;
     text-align: center;
     font-size: 30px;
@@ -41,10 +41,14 @@ html{
     <div class="bigflex">
 		<p id="karma"></p> Total Karma
 	</div>
+     <div class="bigflex">
+		<p id="remainingKarma"></p> Remaining
+	 
+	</div>
 	
-	<div class="smallflex">
+<!--	<div class="smallflex">
 		<p id="postkarma"></p> Post Karma  <p id="commentkarma"></p> Comment Karma 	<p id="awardeekarma"></p> Awardee Karma 	<p id="awarderkarma"></p> Awarder Karma
-	
+-->	
     </div>
 
 	
@@ -63,8 +67,10 @@ html{
       document.getElementById("karma").innerHTML = redditAboutJSON.data.total_karma;
 	document.getElementById("postkarma").innerHTML = redditAboutJSON.data.link_karma;
 	document.getElementById("commentkarma").innerHTML = redditAboutJSON.data.comment_karma;
-	document.getElementById("awardeekarma").innerHTML = redditAboutJSON.data.awardee_karma	;
+	document.getElementById("awardeekarma").innerHTML = redditAboutJSON.data.awardee_karma;
 	document.getElementById("awarderkarma").innerHTML = redditAboutJSON.data.awarder_karma;
+	var remainingKarma = 10000000 - karma;
+	    
     }
   };
   me.open("GET", "https://www.reddit.com/user/regian24/about.json", true);
