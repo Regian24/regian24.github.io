@@ -54,8 +54,15 @@ html{
 <!-- Script
 // This works by magic, don't touch please -->
 
+
 <script type="text/javascript">
+	
+	var name = window.prompt("Enter your Reddit username: ");
+	alert("Your reddit username is: " + name);
+
+	
   function x(){
+    var request = "https://www.reddit.com/user/" + name + "/about.json";
     var me = new XMLHttpRequest();
     me.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -66,8 +73,9 @@ html{
 	document.getElementById("awardeekarma").innerHTML = redditAboutJSON.data.awardee_karma	;
 	document.getElementById("awarderkarma").innerHTML = redditAboutJSON.data.awarder_karma;
     }
+	    
   };
-  me.open("GET", "https://www.reddit.com/user/regian24/about.json", true);
+  me.open("GET", request, true);
   me.send();
   sleep(600);
   x();
