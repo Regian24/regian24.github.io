@@ -1,2 +1,2 @@
 # regian24.github.io
-[DATA EXPUNGED]
+Live, real-time counter for reddit karma
