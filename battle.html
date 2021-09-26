@@ -86,7 +86,7 @@ x();
   function y(){
     var request2 = "https://www.reddit.com/user/CheetahSperm18/about.json";
     var mf = new XMLHttpRequest();
-    mefonreadystatechange = function() {
+    mf.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var redditAboutJSON2 = JSON.parse(this.responseText);
       document.getElementById("karma2").innerHTML = redditAboutJSON2.data.total_karma;
