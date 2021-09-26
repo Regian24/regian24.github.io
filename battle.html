@@ -88,8 +88,8 @@ x();
     var me = new XMLHttpRequest();
     me.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      var redditAboutJSON1 = JSON.parse(this.responseText);
-      document.getElementById("karma2").innerHTML = redditAboutJSON1.data.total_karma;
+      var redditAboutJSON2 = JSON.parse(this.responseText);
+      document.getElementById("karma2").innerHTML = redditAboutJSON2.data.total_karma;
     }
       
   };
